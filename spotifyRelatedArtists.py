@@ -9,30 +9,58 @@ MAIN_PAGE_HTML = """
     <style>
     body{border: 20px solid #E5E5E5; margin: 0; padding: 0;}
     
-    h1 {padding-left: 2cm; color:#ff7f00; font: 40px sans-serif; font-weight: bold}
+    h1 {padding-left: 2cm; color:#ff7f00; font: 40px sans-serif; font-weight: bold;}
     h4 {padding-left: 2cm;  font: 15px sans-serif; font-weight: bold; }
-    p, div{padding-left: 2cm; font: 15px sans-serif}
-    label {padding-left: 0.2cm; font: 15px sans-serif}
-    p2 {padding-left: 4cm; 15px sans-serif} 
+    p{padding-left: 2cm; font: 15px sans-serif}
+    div{padding-left: 2cm;} 
+
+    p2 {padding-left: 2cm}  
     
     a:link {color: #ff7f00;}
     a:visited {color: #ff7f00;}
     a:hover { color: #FFBF7F;}
     
-    .text-input{font: 15px sans-serif;}
+    .text-input{font-size: 100%}
     
     .btn-style{
-    border : solid 5px #ff7f00;
-    border-radius : 3px;
-    moz-border-radius : 3px;
-    -webkit-box-shadow : 0px 0px 5px rgba(0,0,0,1.0);
-    -moz-box-shadow : 0px 0px 5px rgba(0,0,0,1.0);
-    box-shadow : 0px 0px 5px rgba(0,0,0,1.0);
-    font-size : 15px;
-    color : #000000;
+    font-size: 120%;
     font-weight: bold;
-    padding : 3px 14px;
-    background-color : #F4F4F4;}
+    background:#ff7f00;
+    color:#black;
+    border-radius:8px;   
+    padding:1em;
+    margin-left:0em;
+    line-height: 0px;
+    cursor:pointer;
+    height:5%
+    }
+
+label {
+    font-size: 100%;
+    background:#ff7f00;
+    color:#fff;
+    border-radius:8px;   
+    padding:1em;
+    margin:0em;
+    cursor:pointer;
+}
+
+label:hover {
+    background:#FFBF7F;   
+}
+
+input {
+    margin-right:1em;   
+}
+
+input[type=text] {
+  -webkit-appearance: none; -moz-appearance: none;
+  display: block;
+  margin: 0;
+  width: 75%; height: 5%;
+  font-size: 120%;
+  border: 1px solid #bbb;
+}
     
 
     
@@ -48,15 +76,15 @@ MAIN_PAGE_HTML = """
     <br><br>For more details please visit <a href="http://myinspirationinformation.com/visualisation/d3-js/spotify-related-artists-app/" target="_blank">Inspiration Information</a></h4>
     <HR WIDTH=89% size=20 noshade color=#F4F4F4>
     <p>Choose how many stages of related artists would you like: <br><br></p>
-    <p2><INPUT TYPE="Radio" Name="stages" Value="1" checked="checked"><label>1-Stage</label>
-    <INPUT TYPE="Radio" Name="stages" Value="2"><label>2-Stage</label>
+    <p2><label><INPUT TYPE="Radio" Name="stages" Value="1" checked="checked">1-Stage</label>
+    <label><INPUT TYPE="Radio" Name="stages" Value="2">2-Stage</label>
     <br>
     <br>
     <p>If you request 2 stage please be patient it may take a minute
     <br>
     <br> Enter the artist/band name(s). Use semi colons ; to separate multiple artists/bands: 
     </p>
-    <div><input class="text-input" type="text" placeholder=" Enter band name" name="band" size=60 ></div>
+    <div><input class="text-input" type="text" placeholder=" Enter band name" name="band" ></div>
     <br><div><input type="submit" class="btn-style" value="Make me my visualisation"></div>
     </form>
   </body>
@@ -157,19 +185,20 @@ class Guestbook(webapp2.RequestHandler):
     a:hover { color: #FFBF7F;}
     
     .form-style{    
-    border : solid 5px #ff7f00;
-    border-radius : 3px;
-    moz-border-radius : 3px;
-    -webkit-box-shadow : 0px 0px 5px rgba(0,0,0,1.0);
-    -moz-box-shadow : 0px 0px 5px rgba(0,0,0,1.0);
-    box-shadow : 0px 0px 5px rgba(0,0,0,1.0);
-    font-size : 15px;
-    color : #000000;
+    font-size: 120%;
     font-weight: bold;
-    padding : 3px 14px;
-    background-color : #F4F4F4;}
+    background:#ff7f00;
+    color:#black;
+    border-radius:8px;   
+    padding:1em;
+    margin-left:0em;
+    line-height: 0px;
+    cursor:pointer;
+    height:5%
+    }
     
     </style>
+    
     <body>
     <br>
     <h1>SPOTIFY RELATED ARTISTS VISUALISATION<h1/>
@@ -181,6 +210,7 @@ class Guestbook(webapp2.RequestHandler):
     <input type="submit" class="form-style" value="Make Another">
     </form>
     </h4>
+
 
     <script src="http://d3js.org/d3.v3.min.js"></script>
     
